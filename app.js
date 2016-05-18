@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/serietv',function (err,res) {
 	}else{
 		console.log('Conexion con la Base de datos Establecida');
 	}
-})
+});
 
 //Requiriendo Modulos de Rutas
 var routerIndex = require('./routes/index');
