@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 //Requiriendo Modulos de Rutas
 var routerIndex = require('./routes/index');
@@ -9,6 +10,7 @@ var routerIndex = require('./routes/index');
 //Middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(methodOverride());
 
 //Middlewares de Rutas
 app.use('/',routerIndex);
