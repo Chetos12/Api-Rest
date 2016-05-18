@@ -16,6 +16,7 @@ mongoose.connect('mongodb://localhost/serietv',function (err,res) {
 
 //Requiriendo Modulos de Rutas
 var routerIndex = require('./routes/index');
+var routerApi = require('./routes/api');
 
 //Middlewares
 app.use(bodyParser.json());
@@ -24,6 +25,7 @@ app.use(methodOverride());
 
 //Middlewares de Rutas
 app.use('/',routerIndex);
+app.use('/api',routerApi);
 
 //Inicializando el Server
 app.listen(3000,function (req,res) {
