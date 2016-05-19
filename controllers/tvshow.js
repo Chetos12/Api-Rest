@@ -13,6 +13,17 @@ exports.finAllTvShows= function (req, res) {
     });
 };
 
+exports.findById = function (req, res) {
+    TVShow.findById(req.params.id,function (err, data) {
+        if(err){
+            return res.send(500,err.message);
+        }else{
+            console.log('GET/tvshow/'+ req.pasrams.id);
+            res.status(200).jsonp(data);
+        }
+    });
+}
+
 //Reciev POST
 
 exports.addTvShow = function (req, res) {
